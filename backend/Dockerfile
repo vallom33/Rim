@@ -1,14 +1,17 @@
-# استخدم صورة جافا
+# Use Java 17
 FROM eclipse-temurin:17-jdk-alpine
 
-# إعداد مجلد داخل الحاوية
+# Set working directory
 WORKDIR /app
 
-# نسخ كل الملفات إلى الحاوية
-COPY . .
+# Copy only the necessary files
+COPY pom.xml .
+COPY mvnw .
+COPY .mvn .mvn
+COPY src src
 
-# بناء المشروع
+# Build the application
 RUN ./mvnw clean package -DskipTests
 
-# تشغيل التطبيق
-CMD ["java", "-jar", "target/اسم-ملف-jar-هنا.jar"]
+# Run the application (using your exact JAR name)
+CMD ["java", "-jar", "target/house-shop-0.0.1-SNAPSHOT.jar"]
