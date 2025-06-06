@@ -1,0 +1,144 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ getTranslation('home.welcome') }}</h1>
+      <p class="hero-subtitle">{{ getTranslation('home.subtitle') }}</p>
+      
+      <div class="search-box">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ getTranslation('home.search') }}</mat-label>
+          <input matInput placeholder="Ville, quartier ou type de propriété">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button color="primary">
+          <mat-icon>search</mat-icon>
+          Rechercher
+        </button>
+      </div>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-value">500+</div>
+          <div class="stat-label">Propriétés</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">50+</div>
+          <div class="stat-label">Villes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">1000+</div>
+          <div class="stat-label">Clients satisfaits</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Properties Section -->
+  <section class="section featured-section">
+    <div class="section-header">
+      <h2>{{ getTranslation('home.featured') }}</h2>
+      <a routerLink="/houses" class="view-all">
+        {{ getTranslation('home.viewAll') }}
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+    
+    <div *ngIf="loading" class="loading-container">
+      <mat-spinner></mat-spinner>
+      <p>Chargement des propriétés...</p>
+    </div>
+    
+    <div *ngIf="!loading" class="houses-grid">
+      <app-house-card 
+        *ngFor="let house of featuredHouses" 
+        [house]="house"
+        [featured]="true">
+      </app-house-card>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section class="section services-section">
+    <div class="section-header centered">
+      <h2>{{ getTranslation('home.services') }}</h2>
+      <p class="section-subtitle">Des solutions immobilières complètes pour tous vos besoins</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-icon">
+          <mat-icon>{{ service.icon }}</mat-icon>
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Recent Properties Section -->
+  <section class="section recent-section">
+    <div class="section-header">
+      <h2>{{ getTranslation('home.recent') }}</h2>
+      <a routerLink="/houses" class="view-all">
+        {{ getTranslation('home.viewAll') }}
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+    
+    <div class="houses-grid">
+      <app-house-card 
+        *ngFor="let house of recentHouses" 
+        [house]="house">
+      </app-house-card>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section class="section testimonials-section">
+    <div class="section-header centered">
+      <h2>{{ getTranslation('home.testimonials') }}</h2>
+      <p class="section-subtitle">Ce que nos clients disent de nous</p>
+    </div>
+    
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="testimonial-content">
+          <mat-icon class="quote-icon">format_quote</mat-icon>
+          <p class="testimonial-text">{{ testimonial.text }}</p>
+        </div>
+        <div class="testimonial-author">
+          <img [src]="testimonial.image" [alt]="testimonial.name" class="author-image">
+          <div class="author-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p>{{ testimonial.position }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Partners Section -->
+  <section class="section partners-section">
+    <div class="section-header centered">
+      <h2>{{ getTranslation('home.partners') }}</h2>
+      <p class="section-subtitle">Ils nous font confiance</p>
+    </div>
+    
+    <div class="partners-grid">
+      <div class="partner-item" *ngFor="let partner of partners">
+        <img [src]="partner.logo" [alt]="partner.name" class="partner-logo">
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>{{ getTranslation('home.cta') }}</h2>
+      <button mat-raised-button color="accent" routerLink="/houses">
+        {{ getTranslation('home.ctaButton') }}
+      </button>
+    </div>
+  </section>
+</div>

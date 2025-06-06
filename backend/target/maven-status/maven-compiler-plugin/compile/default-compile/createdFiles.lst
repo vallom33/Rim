@@ -1,0 +1,7 @@
+com\mauritania\houseshop\HouseShopApplication.class
+com\mauritania\houseshop\repository\HouseRepository.class
+com\mauritania\houseshop\controller\HouseController.class
+com\mauritania\houseshop\service\HouseService.class
+com\mauritania\houseshop\entity\House.class
+com\mauritania\houseshop\dto\HouseFilterDto.class
+com\mauritania\houseshop\config\DataInitializer.class

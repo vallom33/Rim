@@ -1,0 +1,31 @@
+<div class="house-list-container">
+  <app-house-filter (filterChange)="onFilterChange($event)"></app-house-filter>
+  
+  <div class="houses-section">
+    <div *ngIf="loading" class="loading-container">
+      <mat-spinner></mat-spinner>
+      <p>Chargement des maisons...</p>
+    </div>
+    
+    <div *ngIf="error" class="error-container">
+      <mat-icon>error</mat-icon>
+      <p>{{ error }}</p>
+      <button mat-raised-button color="primary" (click)="loadHouses()">
+        Réessayer
+      </button>
+    </div>
+    
+    <div *ngIf="!loading && !error && filteredHouses.length === 0" class="no-houses">
+      <mat-icon>home</mat-icon>
+      <h3>{{ getTranslation('house.noHouses') }}</h3>
+      <p>Essayez de modifier vos critères de recherche</p>
+    </div>
+    
+    <div *ngIf="!loading && !error && filteredHouses.length > 0" class="houses-grid">
+      <app-house-card 
+        *ngFor="let house of filteredHouses; trackBy: trackByHouseId" 
+        [house]="house">
+      </app-house-card>
+    </div>
+  </div>
+</div>

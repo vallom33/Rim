@@ -1,0 +1,157 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: none;
+  transition: all 0.3s ease;
+  
+  &.scrolled {
+    height: 64px;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+    .logo {
+      height: 60px;
+       margin-right: 18px;
+    }
+    
+    .title {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  margin-right: 16px;
+  display: none;
+  
+  @media (max-width: 992px) {
+    display: flex;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  height: 42px;
+  margin-right: 12px;
+  transition: height 0.3s ease;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: font-size 0.3s ease;
+  color: #3f51b5;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 8px;
+  
+  a {
+    font-weight: 500;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #3f51b5;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    &:hover::after, &.active::after {
+      width: 80%;
+    }
+    
+    &.active {
+      color: #3f51b5;
+    }
+  }
+}
+
+.language-switcher {
+  display: flex;
+  gap: 8px;
+  margin-right: 16px;
+  
+  button {
+    min-width: 60px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    
+    &.active {
+      background-color: rgba(63, 81, 181, 0.1);
+      color: #3f51b5;
+      font-weight: 500;
+    }
+  }
+}
+
+.contact-button {
+  border-radius: 24px;
+  padding: 0 20px;
+  
+  mat-icon {
+    margin-right: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 16px;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+  }
+  
+  .language-switcher button {
+    min-width: 50px;
+    font-size: 0.9rem;
+  }
+}

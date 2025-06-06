@@ -1,0 +1,63 @@
+<div class="sidebar-content">
+  <div class="sidebar-header">
+    <div class="logo-container">
+      <img src="assets/images/logo.png" alt="Dari Logo" class="logo">
+      <h2>{{ getTranslation('app.title') }}</h2>
+    </div>
+    <button mat-icon-button (click)="onCloseSidebar()" class="close-button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  
+  <mat-nav-list>
+    <a mat-list-item routerLink="/" (click)="onCloseSidebar()">
+      <mat-icon matListItemIcon>home</mat-icon>
+      <span matListItemTitle>{{ getTranslation('nav.home') }}</span>
+    </a>
+    
+    <a mat-list-item routerLink="/houses" (click)="onCloseSidebar()">
+      <mat-icon matListItemIcon>apartment</mat-icon>
+      <span matListItemTitle>{{ getTranslation('nav.houses') }}</span>
+    </a>
+    
+    <a mat-list-item routerLink="/services" (click)="onCloseSidebar()">
+      <mat-icon matListItemIcon>business_center</mat-icon>
+      <span matListItemTitle>{{ getTranslation('nav.services') }}</span>
+    </a>
+    
+    <a mat-list-item routerLink="/about" (click)="onCloseSidebar()">
+      <mat-icon matListItemIcon>info</mat-icon>
+      <span matListItemTitle>{{ getTranslation('nav.about') }}</span>
+    </a>
+    
+    <a mat-list-item routerLink="/contact" (click)="onCloseSidebar()">
+      <mat-icon matListItemIcon>contact_mail</mat-icon>
+      <span matListItemTitle>{{ getTranslation('nav.contact') }}</span>
+    </a>
+  </mat-nav-list>
+  
+  <div class="sidebar-footer">
+    <div class="contact-info">
+      <div class="contact-item">
+        <mat-icon>phone</mat-icon>
+        <span>+222 45 25 25 25</span>
+      </div>
+      <div class="contact-item">
+        <mat-icon>email</mat-icon>
+        <span>contact&#64;dari.mr</span>
+      </div>
+    </div>
+    
+    <div class="social-links">
+      <a href="#" target="_blank" class="social-link">
+        <mat-icon>facebook</mat-icon>
+      </a>
+      <a href="#" target="_blank" class="social-link">
+        <mat-icon>whatsapp</mat-icon>
+      </a>
+      <a href="#" target="_blank" class="social-link">
+        <mat-icon>instagram</mat-icon>
+      </a>
+    </div>
+  </div>
+</div>

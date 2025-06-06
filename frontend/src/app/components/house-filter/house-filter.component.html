@@ -1,0 +1,72 @@
+<mat-card class="filter-card">
+  <mat-card-header>
+    <mat-card-title>{{ getTranslation('filter.title') }}</mat-card-title>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <form [formGroup]="filterForm" class="filter-form">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>{{ getTranslation('filter.city') }}</mat-label>
+        <mat-select formControlName="city">
+          <mat-option value="">Toutes les villes</mat-option>
+          <mat-option *ngFor="let city of cities" [value]="city">
+            {{ city }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>{{ getTranslation('filter.quartier') }}</mat-label>
+        <mat-select formControlName="quartier">
+          <mat-option value="">Tous les quartiers</mat-option>
+          <mat-option *ngFor="let quartier of quartiers" [value]="quartier">
+            {{ quartier }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="price-range">
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>{{ getTranslation('filter.minPrice') }}</mat-label>
+          <input matInput type="number" formControlName="minPrice" placeholder="0">
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" class="half-width">
+          <mat-label>{{ getTranslation('filter.maxPrice') }}</mat-label>
+          <input matInput type="number" formControlName="maxPrice" placeholder="∞">
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>{{ getTranslation('filter.houseType') }}</mat-label>
+        <mat-select formControlName="houseType">
+          <mat-option value="">Tous les types</mat-option>
+          <mat-option *ngFor="let type of houseTypes" [value]="type">
+            {{ type }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>{{ getTranslation('filter.bedrooms') }}</mat-label>
+        <mat-select formControlName="minBedrooms">
+          <mat-option value="">Toutes</mat-option>
+          <mat-option [value]="1">1+</mat-option>
+          <mat-option [value]="2">2+</mat-option>
+          <mat-option [value]="3">3+</mat-option>
+          <mat-option [value]="4">4+</mat-option>
+          <mat-option [value]="5">5+</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="filter-actions">
+        <button mat-raised-button color="primary" type="button" (click)="applyFilter()">
+          {{ getTranslation('filter.apply') }}
+        </button>
+        <button mat-button type="button" (click)="clearFilter()">
+          {{ getTranslation('filter.clear') }}
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

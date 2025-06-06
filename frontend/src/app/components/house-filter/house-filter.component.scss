@@ -1,0 +1,49 @@
+.filter-card {
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.price-range {
+  display: flex;
+  gap: 16px;
+  
+  .half-width {
+    flex: 1;
+  }
+}
+
+.filter-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .price-range {
+    flex-direction: column;
+    gap: 16px;
+    
+    .half-width {
+      width: 100%;
+    }
+  }
+  
+  .filter-actions {
+    flex-direction: column;
+    
+    button {
+      width: 100%;
+    }
+  }
+}

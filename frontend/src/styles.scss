@@ -1,0 +1,189 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+// RTL Support for Arabic
+[dir="rtl"] {
+  .mat-toolbar {
+    direction: rtl;
+  }
+  
+  .mat-sidenav {
+    direction: rtl;
+  }
+  
+  .house-card {
+    direction: rtl;
+  }
+  
+  .filter-form {
+    direction: rtl;
+  }
+}
+
+// Custom Material Theme Overrides
+.mat-toolbar.mat-primary {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #333 !important;
+}
+
+.mat-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  transition: box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
+  }
+}
+
+.mat-raised-button {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  }
+}
+
+.mat-form-field {
+  .mat-form-field-outline {
+    border-radius: 8px !important;
+  }
+}
+
+// Responsive utilities
+.full-width {
+  width: 100% !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+// Loading animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+  
+  &:hover {
+    background: #a8a8a8;
+  }
+}
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+// Links
+a {
+  color: #3f51b5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #303f9f;
+  }
+}
+
+// Buttons
+.btn-primary {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #303f9f;
+    transform: translateY(-2px);
+  }
+}
+
+// Shadows
+.shadow-sm {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+// Spacing utilities
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+.mt-5 { margin-top: 40px; }
+
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+.mb-5 { margin-bottom: 40px; }
+
+.p-1 { padding: 8px; }
+.p-2 { padding: 16px; }
+.p-3 { padding: 24px; }
+.p-4 { padding: 32px; }
+.p-5 { padding: 40px; }

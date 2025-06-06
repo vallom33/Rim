@@ -1,0 +1,51 @@
+<mat-card class="house-card" [class.featured]="featured" *ngIf="house">
+  <div class="image-container">
+    <img 
+      mat-card-image 
+      [src]="house.imageUrls[0]" 
+      [alt]="house.title"
+      class="house-image">
+    <div class="price-badge">
+      {{ formatPrice(house.price) }} {{ getTranslation('currency') }}
+    </div>
+    <div *ngIf="featured" class="featured-badge">
+      <mat-icon>star</mat-icon>
+      <span>Featured</span>
+    </div>
+  </div>
+  
+  <mat-card-header>
+    <mat-card-title class="house-title">{{ house.title }}</mat-card-title>
+    <mat-card-subtitle class="house-location">
+      <mat-icon>location_on</mat-icon>
+      {{ house.quartier }}, {{ house.city }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <p class="house-description">{{ house.description }}</p>
+    
+    <div class="house-details">
+      <div class="detail-item">
+        <mat-icon>bed</mat-icon>
+        <span>{{ house.bedrooms }} {{ getTranslation('house.bedrooms') }}</span>
+      </div>
+      
+      <div class="detail-item">
+        <mat-icon>bathtub</mat-icon>
+        <span>{{ house.bathrooms }} {{ getTranslation('house.bathrooms') }}</span>
+      </div>
+      
+      <div class="detail-item">
+        <mat-icon>square_foot</mat-icon>
+        <span>{{ house.areaSqm }} {{ getTranslation('sqm') }}</span>
+      </div>
+    </div>
+  </mat-card-content>
+  
+  <mat-card-actions>
+    <button mat-raised-button color="primary" [routerLink]="['/house', house.id]">
+      {{ getTranslation('house.viewDetails') }}
+    </button>
+  </mat-card-actions>
+</mat-card>

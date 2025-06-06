@@ -1,0 +1,146 @@
+<div class="house-detail-container">
+  <div *ngIf="loading" class="loading-container">
+    <mat-spinner></mat-spinner>
+    <p>Chargement des détails...</p>
+  </div>
+  
+  <div *ngIf="error" class="error-container">
+    <mat-icon>error</mat-icon>
+    <p>{{ error }}</p>
+    <button mat-raised-button color="primary" (click)="goBack()">
+      Retour à la liste
+    </button>
+  </div>
+  
+  <div *ngIf="!loading && !error && house" class="house-detail">
+    <div class="detail-header">
+      <button mat-icon-button (click)="goBack()" class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <h1>{{ house.title }}</h1>
+    </div>
+    
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <img 
+          [src]="house.imageUrls[currentImageIndex]" 
+          [alt]="house.title"
+          class="main-image">
+        
+        <button 
+          *ngIf="house.imageUrls.length > 1"
+          mat-fab 
+          color="primary" 
+          class="nav-button prev-button"
+          (click)="previousImage()">
+          <mat-icon>chevron_left</mat-icon>
+        </button>
+        
+        <button 
+          *ngIf="house.imageUrls.length > 1"
+          mat-fab 
+          color="primary" 
+          class="nav-button next-button"
+          (click)="nextImage()">
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+        
+        <div class="price-badge">
+          {{ formatPrice(house.price) }} {{ getTranslation('currency') }}
+        </div>
+      </div>
+      
+      <div *ngIf="house.imageUrls.length > 1" class="thumbnail-container">
+        <img 
+          *ngFor="let image of house.imageUrls; let i = index"
+          [src]="image"
+          [alt]="house.title"
+          class="thumbnail"
+          [class.active]="i === currentImageIndex"
+          (click)="currentImageIndex = i">
+      </div>
+    </div>
+    
+    <div class="house-info">
+      <div class="basic-info">
+        <h2>{{ house.title }}</h2>
+        <p class="location">
+          <mat-icon>location_on</mat-icon>
+          {{ house.address || house.quartier + ', ' + house.city }}
+        </p>
+        <p class="description">{{ house.description }}</p>
+      </div>
+      
+      <div class="details-grid">
+        <mat-card class="detail-card">
+          <mat-card-content>
+            <div class="detail-item">
+              <mat-icon>bed</mat-icon>
+              <div>
+                <span class="value">{{ house.bedrooms }}</span>
+                <span class="label">{{ getTranslation('house.bedrooms') }}</span>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        
+        <mat-card class="detail-card">
+          <mat-card-content>
+            <div class="detail-item">
+              <mat-icon>bathtub</mat-icon>
+              <div>
+                <span class="value">{{ house.bathrooms }}</span>
+                <span class="label">{{ getTranslation('house.bathrooms') }}</span>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        
+        <mat-card class="detail-card">
+          <mat-card-content>
+            <div class="detail-item">
+              <mat-icon>square_foot</mat-icon>
+              <div>
+                <span class="value">{{ house.areaSqm }}</span>
+                <span class="label">{{ getTranslation('sqm') }}</span>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        
+        <mat-card class="detail-card">
+          <mat-card-content>
+            <div class="detail-item">
+              <mat-icon>home</mat-icon>
+              <div>
+                <span class="value">{{ house.houseType }}</span>
+                <span class="label">Type</span>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      
+      <div class="contact-section">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Contactez-nous</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Intéressé par cette propriété ? Contactez-nous pour plus d'informations.</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary">
+              <mat-icon>phone</mat-icon>
+              Appeler
+            </button>
+            <button mat-raised-button color="accent">
+              <mat-icon>email</mat-icon>
+              Email
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

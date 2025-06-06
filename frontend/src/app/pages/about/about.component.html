@@ -1,0 +1,111 @@
+<div class="about-container">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="hero-content">
+      <h1>{{ getTranslation('about.title') }}</h1>
+      <p>{{ getTranslation('about.subtitle') }}</p>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="section mission-section">
+    <div class="content-grid">
+      <div class="text-content">
+        <h2>{{ getTranslation('about.mission') }}</h2>
+        <p>{{ getTranslation('about.mission.p1') }}</p>
+        <p>{{ getTranslation('about.mission.p2') }}</p>
+      </div>
+      <div class="image-content">
+        <img src="assets/images/about/mission.jpg" alt="Mission" class="section-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="section vision-section">
+    <div class="content-grid reverse">
+      <div class="image-content">
+        <img src="assets/images/about/vision.jpg" alt="Vision" class="section-image">
+      </div>
+      <div class="text-content">
+        <h2>{{ getTranslation('about.vision') }}</h2>
+        <p>{{ getTranslation('about.vision.p1') }}</p>
+        <p>{{ getTranslation('about.vision.p2') }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="section values-section">
+    <div class="section-header centered">
+      <h2>{{ getTranslation('about.valuesTitle') }}</h2>
+      <p class="section-subtitle">{{ getTranslation('about.valuesSubtitle') }}</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon"><mat-icon>verified</mat-icon></div>
+        <h3>{{ getTranslation('about.value1.title') }}</h3>
+        <p>{{ getTranslation('about.value1.desc') }}</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><mat-icon>star</mat-icon></div>
+        <h3>{{ getTranslation('about.value2.title') }}</h3>
+        <p>{{ getTranslation('about.value2.desc') }}</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><mat-icon>handshake</mat-icon></div>
+        <h3>{{ getTranslation('about.value3.title') }}</h3>
+        <p>{{ getTranslation('about.value3.desc') }}</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><mat-icon>innovation</mat-icon></div>
+        <h3>{{ getTranslation('about.value4.title') }}</h3>
+        <p>{{ getTranslation('about.value4.desc') }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section team-section">
+    <div class="section-header centered">
+      <h2>{{ getTranslation('about.team') }}</h2>
+      <p class="section-subtitle">{{ getTranslation('about.teamSubtitle') }}</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card" *ngFor="let member of teamMembers">
+        <div class="member-image">
+          <img [src]="member.image" [alt]="member.name">
+        </div>
+        <div class="member-info">
+          <h3>{{ member.name }}</h3>
+          <p class="position">{{ member.position }}</p>
+          <p class="description">{{ member.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section stats-section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">500+</div>
+        <div class="stat-label">{{ getTranslation('about.stat1') }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1000+</div>
+        <div class="stat-label">{{ getTranslation('about.stat2') }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">50+</div>
+        <div class="stat-label">{{ getTranslation('about.stat3') }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">5</div>
+        <div class="stat-label">{{ getTranslation('about.stat4') }}</div>
+      </div>
+    </div>
+  </section>
+</div>
