@@ -1,15 +1,11 @@
-# Use Java 17
-FROM eclipse-temurin:17-jdk-alpine
+# استخدم صورة Maven + JDK 17 الرسمية
+FROM maven:3.9.4-eclipse-temurin-17
 
-# Set working directory
+# مجلد العمل داخل الحاوية
 WORKDIR /app
 
-# Copy ALL backend files (including the newly generated wrapper)
-COPY backend .
+# انسخ كل ملفات مشروعك إلى داخل الحاوية
+COPY . .
 
-# Make mvnw executable and build
-RUN chmod +x mvnw && \
-    ./mvnw clean package -DskipTests
-
-# Run the application
-CMD ["java", "-jar", "target/house-shop-0.0.1-SNAPSHOT.jar"]
+# شغّل Spring Boot مباشرة باستخدام Maven وبروفايل prod
+CMD ["mvn", "spring-boot:run", "-Dspring-boot.run.profiles=prod"]
