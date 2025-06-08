@@ -7,7 +7,7 @@ import  { House, HouseFilter } from "../models/house.model"
   providedIn: "root",
 })
 export class HouseService {
-  private apiUrl = "http://localhost:8080/api/houses"
+  private apiUrl = "/api/houses"
 
   // Sample image URLs for houses (replace with your actual image URLs)
   private sampleImages = [

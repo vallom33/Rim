@@ -40,7 +40,7 @@ export class LanguageService {
   private initTranslations() {
     this.translations.fr = {
       // === GLOBAL ===
-      "app.title": "Dari - Immobilier Mauritanie",
+      "app.title": "Dari - Mauritanie",
       "app.slogan": "Trouvez votre maison de rêve en Mauritanie",
       "currency": "MRU",
       "sqm": "m²",
@@ -133,7 +133,7 @@ export class LanguageService {
     }
 
     this.translations.ar = {
-      "app.title": "داري - العقارات في موريتانيا",
+      "app.title": "داري - موريتانيا",
       "app.slogan": "ابحث عن منزل أحلامك في موريتانيا",
       "currency": "أوقية",
       "sqm": "م²",
