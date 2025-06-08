@@ -1,0 +1,77 @@
+{
+  "configVersion": 1,
+  "timestamp": 1749388204526,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/index.html",
+        "/main.8e5c633eb9636c32.js",
+        "/manifest.json",
+        "/polyfills.180fb49c87a31461.js",
+        "/runtime.bf7f4414ffcf04cb.js",
+        "/styles.1d983b644153da4a.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/houses/1.jpeg",
+        "/assets/houses/2.jpeg",
+        "/assets/houses/3.jpeg",
+        "/assets/houses/logo.jpg",
+        "/assets/images/logo.png",
+        "/assets/images/team/ceo.png",
+        "/assets/images/team/dev.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/houses/1.jpeg": "cff25cad1e2050718cec316b0c8c46f7aa4eceb0",
+    "/assets/houses/2.jpeg": "d7d6bf17e9062fed41a2da15fb03838f938f57fc",
+    "/assets/houses/3.jpeg": "77d86c73f552e9ddb0b50072fbad638482d22463",
+    "/assets/houses/logo.jpg": "2f2d4178599e69016c89cde29faca4f63ee4d796",
+    "/assets/images/logo.png": "dc4f2a7d67775259d20dce457cf9555f1d08b891",
+    "/assets/images/team/ceo.png": "f7b96ca542fd15e0bb121feb6218502b394f45ca",
+    "/assets/images/team/dev.png": "041dd8c3077dcb5fb37a90948686c15e97563a21",
+    "/index.html": "4cdbb7ad9cb92077f72323816aa6210e6ba17e3b",
+    "/main.8e5c633eb9636c32.js": "788f61325bb9e8c4b4ec1bcae0b5911f4f248f1f",
+    "/manifest.json": "243cd39839d1193a199f10a67751a911754e7357",
+    "/polyfills.180fb49c87a31461.js": "d0a3ce6908e9ac991f37f376047ecfb62e6899cf",
+    "/runtime.bf7f4414ffcf04cb.js": "a24bf310072bbefcab194808996e7903e9adebaf",
+    "/styles.1d983b644153da4a.css": "08fc8783a7583a399e3ecc21cff0f9ec37fe0bd3"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
