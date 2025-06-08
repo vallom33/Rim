@@ -2,10 +2,9 @@
   <div class="image-container">
     <img 
       mat-card-image 
-      [src]="getImageUrl()" 
+      [src]="house.imageUrls[0]" 
       [alt]="house.title"
-  class="house-image">
-
+      class="house-image">
     <div class="price-badge">
       {{ formatPrice(house.price) }} {{ getTranslation('currency') }}
     </div>

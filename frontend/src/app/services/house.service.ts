@@ -11,12 +11,12 @@ export class HouseService {
 
   // Sample image URLs for houses (replace with your actual image URLs)
   private sampleImages = [
-    "/assets/images/houses/house1.jpg",
-    "/assets/images/houses/house2.jpg",
-    "/assets/images/houses/house3.jpg",
-    "/assets/images/houses/house4.jpg",
-    "/assets/images/houses/house5.jpg",
-    "/assets/images/houses/house6.jpg",
+    "/assets/houses/1.jpeg",
+    "/assets/houses/2.jpeg",
+    "/assets/houses/3.jpeg",
+    "/assets/houses/logo.jpg",
+    "/assets/houses/house5.jpg",
+    "/assets/houses/house6.jpg",
   ]
 
   constructor(private http: HttpClient) {}
