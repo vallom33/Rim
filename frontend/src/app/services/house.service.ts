@@ -7,7 +7,7 @@ import  { House, HouseFilter } from "../models/house.model"
   providedIn: "root",
 })
 export class HouseService {
-  private apiUrl = "/api/houses"
+  private apiUrl = "https://rim-lzyj.onrender.com/api/houses"
 
   // Sample image URLs for houses (replace with your actual image URLs)
   private sampleImages = [
@@ -15,8 +15,8 @@ export class HouseService {
     "/assets/houses/2.jpeg",
     "/assets/houses/3.jpeg",
     "/assets/houses/logo.jpg",
-    "/assets/houses/house5.jpg",
-    "/assets/houses/house6.jpg",
+    "/assets/houses/2.jpeg",
+    "/assets/houses/1.jpeg",
   ]
 
   constructor(private http: HttpClient) {}
