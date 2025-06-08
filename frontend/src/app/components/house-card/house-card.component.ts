@@ -20,4 +20,17 @@ export class HouseCardComponent {
   getTranslation(key: string): string {
     return this.languageService.getTranslation(key)
   }
+
+  getImageUrl(): string {
+    if (this.house && this.house.imageUrls && this.house.imageUrls.length > 0) {
+      let url = this.house.imageUrls[0]
+      // إذا المسار لا يبدأ بـ /، نضيف /
+      if (!url.startsWith('/')) {
+        url = '/' + url
+      }
+      return url
+    }
+    // صورة افتراضية إذا لم يكن هناك صورة
+    return '/assets/images/default-house.jpg'
+  }
 }
