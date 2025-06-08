@@ -2,7 +2,8 @@
   "name": "mauritania-house-shop",
   "version": "0.0.0",
   "scripts": {
-  "build": "ng build --configuration production"
+  "build": "node node_modules/@angular/cli/bin/ng build --configuration production",
+  "vercel-build": "npm install && npm run build"
 },
   "private": true,
   "dependencies": {
